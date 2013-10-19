@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88AB5562-18A1-40AA-97E9-FCFB4640F804}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ricordanza.Mock</RootNamespace>
+    <AssemblyName>Ricordanza.Mock</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e47daf1cc095d3ba, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MockForm.Designer.cs">
+      <DependentUpon>MockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MockForm.resx">
+      <DependentUpon>MockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ricordanza.Core\Ricordanza.Core.csproj">
+      <Project>{1682E593-5876-4290-9755-3917FBBBD5A5}</Project>
+      <Name>Ricordanza.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ricordanza.Data\Ricordanza.Data.csproj">
+      <Project>{4C4BE269-90C1-4464-84A3-7C71F86522D8}</Project>
+      <Name>Ricordanza.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ricordanza.Log\Ricordanza.Log.csproj">
+      <Project>{0C37A233-1C84-4841-8276-5117B9F25C68}</Project>
+      <Name>Ricordanza.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ricordanza.Merge\Ricordanza.Merge.csproj">
+      <Project>{55A53788-80EE-4902-8AEA-A8B5D718D3B5}</Project>
+      <Name>Ricordanza.Merge</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ricordanza.Plugin\Ricordanza.Plugin.csproj">
+      <Project>{0CDFF342-500E-49B7-A90C-6F1FEA22F4F9}</Project>
+      <Name>Ricordanza.Plugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ricordanza.Property\Ricordanza.Property.csproj">
+      <Project>{DF1DBF70-3609-480A-ACF0-D3905F605966}</Project>
+      <Name>Ricordanza.Property</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ricordanza.Resource.Log\Ricordanza.Resource.Log.csproj">
+      <Project>{D7814574-E696-417B-8636-B8CFD6E69681}</Project>
+      <Name>Ricordanza.Resource.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ricordanza.Resource\Ricordanza.Resource.csproj">
+      <Project>{AD83E9DC-3ECC-4E7B-942B-B564222E8B5E}</Project>
+      <Name>Ricordanza.Resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ricordanza.Security\Ricordanza.Security.csproj">
+      <Project>{FBC98F78-7689-42CA-8572-7EF9E80E5603}</Project>
+      <Name>Ricordanza.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ricordanza.SnapShot\Ricordanza.SnapShot.csproj">
+      <Project>{895BDC46-BF6F-4B93-AA9E-97A9C0FFE0A9}</Project>
+      <Name>Ricordanza.SnapShot</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ricordanza.WinFormsUI\Ricordanza.WinFormsUI.csproj">
+      <Project>{9B35E0BC-55A8-4DFF-A22B-E13BC8360BA7}</Project>
+      <Name>Ricordanza.WinFormsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
