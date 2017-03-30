@@ -1,0 +1,7 @@
+language: csharp
+script:
+  - xbuild /p:Configuration=Debug Ricordanza.Kernel.sln
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
+  - nuget restore Tac.MetaServlet.Client.sln
